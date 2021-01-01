@@ -23,8 +23,10 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('portfolio/', include('portfolio.urls', namespace='portfolio'))
+    path('portfolio/', include('portfolio.urls', namespace='portfolio')),
+    path('blog/', include('blog.urls', namespace='blog'))
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

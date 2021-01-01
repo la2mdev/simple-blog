@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Se han escrito {{ articles.count }} articulo{{ articles.count|pluralize }}</p>
+
+    {% for article in articles %}
+    <h3><a href="{% url 'blog:details' article.pk %}">{{ article.title|upper }}</a></h3>
+    <p><small>{{ article.date|date:'M d Y' }}</small></p>
+    <p>{{ article.description|truncatechars:100 }}</p>
+    <hr/>
+    {% endfor %}
+{% endblock %}

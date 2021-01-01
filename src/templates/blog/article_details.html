@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }} at Simple Blog{% endblock %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<p><small>{{ article.date }}</small></p>
+<p>{{ article.description }}</p>
+<hr/>
+<a href="{% url 'blog:articles' %}">volver a todos los articulos</a>
+{% endblock %}
